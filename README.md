@@ -32,7 +32,7 @@ React setup with Typescript
     export default TextField
     ```
     
-  - Using Interface for props
+  - Using Interface for props' types
     ```
     interface Props {
         name: string;
@@ -65,3 +65,47 @@ React setup with Typescript
           };    //optional
       }
        ```
+- #### Hooks
+  - #### useState
+    - Here we haven't given any type so it itself infers the type to be number
+      ```
+      const [count, setCount] = useState(5);
+      ```
+    - To give a specific tyape to the state, use <>
+      ```
+      const [count, setCount] = useState<number>(5);
+      ```
+    - We can also give different types to be accepted like here `count` accepts any `number` value or `null` value
+      ```
+      const [count, setCount] = useState<number | null>(5);
+      ```
+    - State type may be an object
+      ```
+      const [obj, setObj] = useState<{ text: string }>({text: 'hello'})
+      ```
+    - We can also have state type in form of an Interface
+      ```
+      interface textState {
+      text: string;
+      }
+
+      const [count, setCount] = useState<textState>({text: 'hello'})
+      ```
+   - #### useRef
+     - Unlike the state type in useState hook, ref type is mandatory in useRef
+       ```
+        const inputRef = useRef<HTMLInputElement>(null);
+        const divRef = useRef<HTMLDivElement>(null);
+        return (
+            <div ref={divRef}>
+                <input ref={inputRef} />
+            </div>
+        );
+        ```
+    - #### useReducer
+     - You need to pass state and action type to reducer
+ 
+- #### Render Props
+       
+       
+    
