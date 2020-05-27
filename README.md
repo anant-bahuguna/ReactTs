@@ -1,6 +1,7 @@
 # ReactTs
 React setup with Typescript
 
+`I'll keep updating this file as I get more experience in typescript.`
 
 ### Changes in the react code
 
