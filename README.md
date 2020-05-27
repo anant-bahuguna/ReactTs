@@ -31,3 +31,37 @@ React setup with Typescript
 
     export default TextField
     ```
+    
+  - Using Interface for props
+    ```
+    interface Props {
+        name: string;
+        isSingle: boolean;
+        age: number;
+        fn: (name: string) => void;
+        obj: {
+            x2: number;
+        };
+    }
+
+    const TextField: FC<Props> = () => {
+        return (
+            <div>
+                <input />
+            </div>
+        );
+    };
+    ```
+   - Optional Props can be used using `?:`
+      Here isSingle, fn and obj are optional
+      ```
+      interface Props {
+          name: string;
+          isSingle?: boolean; //Optional
+          age: number;
+          fn?: (name: string) => void; //optional
+          obj?: {            
+              x2: number;
+          };    //optional
+      }
+       ```
